@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bureau of Indian Affairs email signature generator">
+  <title>BIA Email Signature Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="agency-kicker">U.S. Department of the Interior</div>
+      <h1>Bureau of Indian Affairs — Email Signature Generator</h1>
+      <p>Enter your information to create a consistent BIA email signature image.</p>
+    </header>
+
+    <section class="card form-card">
+      <h2>YOUR INFORMATION</h2>
+      <form id="signatureForm" novalidate>
+        <label>Full Name <span>*</span><input id="fullName" required placeholder="e.g. Jordan Smith"></label>
+        <label>Job Title / Position <span>*</span><input id="jobTitle" required placeholder="e.g. Fire Management Officer"></label>
+        <label>Office / Division <span>*</span><input id="office" required placeholder="e.g. Branch of Wildland Fire Management"></label>
+        <label>Region / Agency / Field Office<input id="unit" placeholder="e.g. Western Region"></label>
+        <label>Duty Station <span>*</span><input id="dutyStation" required placeholder="e.g. Phoenix, Arizona"></label>
+        <label>Phone Number <span>*</span><input id="phone" required placeholder="(202) 555-0123"></label>
+        <label>BIA Email <span>*</span><input id="agencyEmail" type="email" required placeholder="e.g. firstname.lastname@bia.gov"></label>
+        <label>FireNet Email (optional)<input id="firenetEmail" type="email" placeholder="e.g. firstname_lastname@firenet.gov"></label>
+      </form>
+    </section>
+
+    <section class="card preview-card">
+      <h2>LIVE PREVIEW</h2>
+      <div class="signature-shell"><canvas id="signatureCanvas" width="1280" height="300" aria-label="BIA email signature preview"></canvas></div>
+      <div class="actions">
+        <button id="downloadBtn" type="button" disabled>Download PNG</button>
+        <button id="copyBtn" type="button" disabled>Copy Image</button>
+      </div>
+      <p id="helpText">Fill in all required fields to enable download.</p>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="notice">
+      <strong>Branding note:</strong> This generator is a customizable BIA-specific implementation, not a claim of an official BIA signature standard. Replace the placeholder agency mark with an approved asset and adjust wording if your office has an official template.
+    </section>
+
+    <footer>U.S. Department of the Interior — Bureau of Indian Affairs</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
